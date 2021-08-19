@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'CherryAgent_Example' do
+  pod 'CherryAgent', :path => '../'
+
+  target 'CherryAgent_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
