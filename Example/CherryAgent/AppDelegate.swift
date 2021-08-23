@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CherryAgent
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        CherryAgent.init(appDelegate: application).setConsumerKey(consumerKey: "CONSUMER_KEY")
+        
+        
+//        Event.init(eventName : "Something").setAttributes(attr: ["abcd" : "xyz"]).setData(data: ["jdkd" : "dasd"]).send(response: {
+//            response in
+//
+//            if(response.status == "Success"){
+//
+//            }else{
+//
+//            }
+//        })
         return true
     }
 

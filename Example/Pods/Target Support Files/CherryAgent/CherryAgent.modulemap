@@ -1,0 +1,6 @@
+framework module CherryAgent {
+  umbrella header "CherryAgent-umbrella.h"
+
+  export *
+  module * { export * }
+}

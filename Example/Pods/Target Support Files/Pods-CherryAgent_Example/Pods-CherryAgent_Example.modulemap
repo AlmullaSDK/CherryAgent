@@ -1,0 +1,6 @@
+framework module Pods_CherryAgent_Example {
+  umbrella header "Pods-CherryAgent_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

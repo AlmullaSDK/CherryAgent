@@ -28,10 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07F90B5B32F10A203C5098CC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		07F90B5B32F10A203C5098CC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		16279469D320DA4467DDFA73 /* Pods-CherryAgent_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CherryAgent_Tests.release.xcconfig"; path = "Target Support Files/Pods-CherryAgent_Tests/Pods-CherryAgent_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		21DF29ABF428E61013F4EC91 /* Pods_CherryAgent_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CherryAgent_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2498B2256986EF6560781D93 /* CherryAgent.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = CherryAgent.podspec; path = ../CherryAgent.podspec; sourceTree = "<group>"; };
+		2498B2256986EF6560781D93 /* CherryAgent.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CherryAgent.podspec; path = ../CherryAgent.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		27668558F87EA6D4713CD2CE /* Pods-CherryAgent_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CherryAgent_Example.release.xcconfig"; path = "Target Support Files/Pods-CherryAgent_Example/Pods-CherryAgent_Example.release.xcconfig"; sourceTree = "<group>"; };
 		2BCB3D946DD1956F6AAA0046 /* Pods-CherryAgent_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CherryAgent_Example.debug.xcconfig"; path = "Target Support Files/Pods-CherryAgent_Example/Pods-CherryAgent_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		555F67877E53DF5D201BB2D3 /* Pods_CherryAgent_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CherryAgent_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +45,7 @@
 		607FACE51AFB9204008FA782 /* CherryAgent_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CherryAgent_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		F2AC422EBDA2B1A582AA0016 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F2AC422EBDA2B1A582AA0016 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F5B89C5FF7BC7B93460DF799 /* Pods-CherryAgent_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CherryAgent_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CherryAgent_Tests/Pods-CherryAgent_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,7 +77,6 @@
 				F5B89C5FF7BC7B93460DF799 /* Pods-CherryAgent_Tests.debug.xcconfig */,
 				16279469D320DA4467DDFA73 /* Pods-CherryAgent_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,6 +212,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 823R2YX564;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -227,6 +227,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -478,6 +479,7 @@
 			baseConfigurationReference = 2BCB3D946DD1956F6AAA0046 /* Pods-CherryAgent_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 823R2YX564;
 				INFOPLIST_FILE = CherryAgent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -493,6 +495,7 @@
 			baseConfigurationReference = 27668558F87EA6D4713CD2CE /* Pods-CherryAgent_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 823R2YX564;
 				INFOPLIST_FILE = CherryAgent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

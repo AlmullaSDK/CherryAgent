@@ -1,0 +1,16 @@
+PODS:
+  - CherryAgent (0.1.0)
+
+DEPENDENCIES:
+  - CherryAgent (from `../`)
+
+EXTERNAL SOURCES:
+  CherryAgent:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CherryAgent: ecde3b6229cb4f43457663e95371fbb68eec409b
+
+PODFILE CHECKSUM: 4bca4178c76632a421331c4d63a709c6c79871c2
+
+COCOAPODS: 1.10.2
