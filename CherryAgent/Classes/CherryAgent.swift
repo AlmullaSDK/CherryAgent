@@ -10,6 +10,12 @@ public class CherryAgent{
     
     private  var appDelegate : UIApplication? = nil
     
+    private var topicListener : CherryTopicListener? = nil
+    
+    private var domain = "https://apib-kwt.almullaexchange.com/xms"
+    
+    private var isDebug = false
+    
     var batteryState: UIDevice.BatteryState {
        return UIDevice.current.batteryState
     }
@@ -19,18 +25,34 @@ public class CherryAgent{
         
     }
     
-    public  func setConsumerKey(consumerKey : String){
+    public  func setConsumerKey(consumerKey : String, topicListener : CherryTopicListener) -> CherryAgent{
         self.consumerKey = consumerKey
+        self.topicListener = topicListener
         UserDefaults.standard.set(consumerKey, forKey: "consumerKey")
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         print("APP VERSION : "+appVersion!)
         UserDefaults.standard.set(appVersion, forKey: "appVersion")
+        
+        
         
         let os = ProcessInfo.processInfo.operatingSystemVersion
         print("OS VERSION : "+String(os.majorVersion) + "." + String(os.minorVersion) + "." + String(os.patchVersion))
         UserDefaults.standard.set(String(os.majorVersion) + "." + String(os.minorVersion) + "." + String(os.patchVersion), forKey: "osVersion")
         print("CLIENT FP : "+UIDevice.current.identifierForVendor!.uuidString)
         
+        
+        
+        return self
+    }
+    
+//    public func setDebug(debug : Bool) -> CherryAgent{
+//        isDebug = debug
+//        return self
+//    }
+    
+    public func set(domain : String){
+        self.domain = domain
+        UserDefaults.standard.set(domain, forKey: "domain")
         makeHeartbeatApiCall()
     }
     
@@ -107,7 +129,7 @@ public class CherryAgent{
         }
         
 
-        var request = URLRequest(url: URL(string: "https://apib-kwt.almullaexchange.com/xms/api/v1/client/heartbeat")!)
+        var request = URLRequest(url: URL(string: domain+"/api/v1/client/heartbeat")!)
         request.httpMethod = "POST"
         request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -124,6 +146,10 @@ public class CherryAgent{
                         if let clientId = resultDictionary.object(forKey: "clientId") as? String{
                             print("ClientID "+clientId)
                             UserDefaults.standard.set(clientId, forKey: "clientId")
+                        }
+                        
+                        if(self.topicListener != nil){
+                            self.topicListener!.onTopicReceived(topic: "topic_cherry_amiec")
                         }
                         
                         if let uuidDictionary = resultDictionary.object(forKey: "uuId") as? NSDictionary{
@@ -196,8 +222,12 @@ public class CherryAgent{
         }catch{
             print(error)
         }
+        var domain = UserDefaults.standard.string(forKey: "domain")
         
-        var request = URLRequest(url: URL(string: "https://apib-kwt.almullaexchange.com/xms/api/v1/client/track/event")!)
+        if domain == nil{
+            domain = "https://apib-kwt.almullaexchange.com/xms"
+        }
+        var request = URLRequest(url: URL(string: domain!+"/api/v1/client/track/event")!)
         request.httpMethod = "POST"
         request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -299,4 +329,9 @@ struct UuID: Codable {
     var updatedStamp: Int?
     var value: String?
     var version: Int?
+}
+
+
+public protocol CherryTopicListener {
+    func onTopicReceived(topic : String)
 }

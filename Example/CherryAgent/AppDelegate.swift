@@ -10,14 +10,14 @@ import UIKit
 import CherryAgent
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,CherryTopicListener {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        CherryAgent.init(appDelegate: application).setConsumerKey(consumerKey: "CONSUMER_KEY")
+        CherryAgent.init(appDelegate: application).setConsumerKey(consumerKey: "CONSUMER_KEY",topicListener: self).set(domain: "https://apib-kwt.almullaexchange.com/xms")
         
         
 //        Event.init(eventName : "Something").setAttributes(attr: ["abcd" : "xyz"]).setData(data: ["jdkd" : "dasd"]).send(response: {
@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            }
 //        })
         return true
+    }
+    
+    func onTopicReceived(topic: String) {
+        print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$  "+topic)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
