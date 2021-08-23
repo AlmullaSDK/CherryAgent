@@ -42,8 +42,8 @@
 		06CF95B660B47863E63D1D6B06E4C494 /* Pods-CherryAgent_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CherryAgent_Example.release.xcconfig"; sourceTree = "<group>"; };
 		2B0B20C1585EBDA7539310851651953E /* Pods-CherryAgent_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CherryAgent_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		454963BA96C33FC276519C706AFD015C /* Pods-CherryAgent_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CherryAgent_Example-Info.plist"; sourceTree = "<group>"; };
-		4FD9D7309FAC14AC53684EB5185FA40B /* CherryAgent.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CherryAgent.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		584D8508A2931BBC93CFD35D2CE6FA16 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		4FD9D7309FAC14AC53684EB5185FA40B /* CherryAgent.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = CherryAgent.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		584D8508A2931BBC93CFD35D2CE6FA16 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6277D8E2D5483988B440A1E35F4E5046 /* Pods-CherryAgent_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CherryAgent_Example-frameworks.sh"; sourceTree = "<group>"; };
 		62A7CB892B56A19936C314BB1B19CCFF /* CherryAgent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CherryAgent.swift; path = CherryAgent/Classes/CherryAgent.swift; sourceTree = "<group>"; };
 		680BCCEA113FC2AB789341FEC46C76D2 /* CherryAgent.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CherryAgent.modulemap; sourceTree = "<group>"; };
@@ -54,16 +54,16 @@
 		89E902BC590D17A506341494AD41A663 /* Pods-CherryAgent_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CherryAgent_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9104B11761D56481B38C3F86879589B4 /* Pods-CherryAgent_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CherryAgent_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9397A09DB81942FE8BC0FF9881BAE868 /* Pods-CherryAgent_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CherryAgent_Tests-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A423E7EF8BF7284BA3802F7F17CB28A8 /* Pods_CherryAgent_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CherryAgent_Example.framework; path = "Pods-CherryAgent_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A423E7EF8BF7284BA3802F7F17CB28A8 /* Pods_CherryAgent_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CherryAgent_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE2ACDB30397EF262FE8CA9A0661C7D /* Pods-CherryAgent_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CherryAgent_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B27E4067765D42FB2EEDACC3044F70CD /* Pods-CherryAgent_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CherryAgent_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B64865FBEE8D32A51EA34B938000D387 /* Pods_CherryAgent_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CherryAgent_Tests.framework; path = "Pods-CherryAgent_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B64865FBEE8D32A51EA34B938000D387 /* Pods_CherryAgent_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CherryAgent_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1559E192C1D741D88645866535C25A /* CherryAgent-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CherryAgent-Info.plist"; sourceTree = "<group>"; };
 		BB8E275A9562057F34C950CC846DBC1E /* CherryAgent-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CherryAgent-dummy.m"; sourceTree = "<group>"; };
-		C2FB228296402FAAD875564B81A3A3D0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C2FB228296402FAAD875564B81A3A3D0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C77AE3BC9F3F81A9FC13FE61AB91E69D /* Pods-CherryAgent_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CherryAgent_Example-umbrella.h"; sourceTree = "<group>"; };
-		C97A2579FFEA56B338836F6A370FCD48 /* CherryAgent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CherryAgent.framework; path = CherryAgent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97A2579FFEA56B338836F6A370FCD48 /* CherryAgent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CherryAgent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDDE602F8337545E86C5D90D2978226 /* CherryAgent-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CherryAgent-umbrella.h"; sourceTree = "<group>"; };
 		D4966F73A6006E6D4896B9E443A030F8 /* Pods-CherryAgent_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CherryAgent_Tests-dummy.m"; sourceTree = "<group>"; };
 		D8B8CE7592CD9DBBAD634286AD2787E3 /* CherryAgent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CherryAgent.release.xcconfig; sourceTree = "<group>"; };
@@ -511,7 +511,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -521,6 +521,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.0.3;
 				MODULEMAP_FILE = "Target Support Files/CherryAgent/CherryAgent.modulemap";
 				PRODUCT_MODULE_NAME = CherryAgent;
 				PRODUCT_NAME = CherryAgent;
@@ -688,8 +689,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -702,7 +702,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -712,6 +712,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 0.0.3;
 				MODULEMAP_FILE = "Target Support Files/CherryAgent/CherryAgent.modulemap";
 				PRODUCT_MODULE_NAME = CherryAgent;
 				PRODUCT_NAME = CherryAgent;

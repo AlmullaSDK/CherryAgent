@@ -160,7 +160,7 @@ public class CherryAgent{
     
     
     static public func setEvent(event : Event,response:@escaping(Result) -> Void){
-                        
+        let consumerKey = UserDefaults.standard.string(forKey: "consumerKey")
         let params = NSMutableDictionary()
         let eventData = NSMutableDictionary()
         eventData["attr"] = event.attr
@@ -196,7 +196,7 @@ public class CherryAgent{
         }catch{
             print(error)
         }
-
+        
         var request = URLRequest(url: URL(string: "https://apib-kwt.almullaexchange.com/xms/api/v1/client/track/event")!)
         request.httpMethod = "POST"
         request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
@@ -204,6 +204,7 @@ public class CherryAgent{
         if let clientID = UserDefaults.standard.string(forKey: "clientId"){
             request.addValue(clientID, forHTTPHeaderField: "clientId")
         }
+        request.addValue(consumerKey!, forHTTPHeaderField: "consumerKey")
         let session = URLSession.shared
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             print(response!)
