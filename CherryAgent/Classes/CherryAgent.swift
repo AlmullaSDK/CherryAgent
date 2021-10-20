@@ -84,7 +84,7 @@ public class CherryAgent : NSObject , MXMetricManagerSubscriber,CrashEyeDelegate
         if(cherryIdentity == nil){
             cherryIdentity = ""
         }
-        let event = Event(eventName: "EVENT_CRASH").setAttributes(attr: ["identity" : cherryIdentity as Any]).setData(data: [:])
+        let event = Event(eventName: "EVENT_CRASH").setAttributes(attr: ["identity" : cherryIdentity as Any, "platform" : "IOS"]).setData(data: [:])
         CherryAgent.setEvent(event: event, response: {_ in
             
         })
