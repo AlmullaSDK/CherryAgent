@@ -14,17 +14,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var messageLabel: UILabel!
-    
-    
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var message = UserDefaults.standard.integer(forKey: "crash")
         self.messageLabel.text = "View Loaded \n"
+        if(message != nil){
+            self.messageLabel.text = "Crash count : "+String(message)
+        }
+        print(UserDefaults.standard.string(forKey: "crash"))
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func onSubmitClicked(_ sender: Any) {
+        let array = ["1","2"]
+        print(array[3])
         if textField.text != ""{
             Event.init(eventName : "EVENT_"+textField.text!).setAttributes(attr: ["ATTR1" : "attr1"]).setData(data: ["DATA1" : ["SUBDATA1" : "subData1", "SUBDATA2" : "subData2"]]).send(response: {
                         response in

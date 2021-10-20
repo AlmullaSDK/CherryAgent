@@ -1,10 +1,14 @@
 import UIKit
+import MetricKit
+import CrashEye
 
 
 
 var stringAMX : String? = nil
 
-public class CherryAgent{
+public class CherryAgent : NSObject , MXMetricManagerSubscriber,CrashEyeDelegate{
+    
+    
             
     private  var consumerKey : String? = nil
     
@@ -16,13 +20,20 @@ public class CherryAgent{
     
     private var isDebug = false
     
+    
     var batteryState: UIDevice.BatteryState {
        return UIDevice.current.batteryState
     }
     
     public init(appDelegate : UIApplication){
         self.appDelegate = appDelegate
-        
+    }
+    
+    
+    @available(iOS 13.0, *)
+    public func initializeMetric(){
+        let metricManager = MXMetricManager.shared
+        metricManager.add(self)
     }
     
     public  func setConsumerKey(consumerKey : String, topicListener : CherryTopicListener) -> CherryAgent{
@@ -39,7 +50,12 @@ public class CherryAgent{
         print("OS VERSION : "+String(os.majorVersion) + "." + String(os.minorVersion) + "." + String(os.patchVersion))
         UserDefaults.standard.set(String(os.majorVersion) + "." + String(os.minorVersion) + "." + String(os.patchVersion), forKey: "osVersion")
         print("CLIENT FP : "+UIDevice.current.identifierForVendor!.uuidString)
-        
+        if #available(iOS 13.0, *) {
+            initializeMetric()
+        } else {
+            // Fallback on earlier versions
+        }
+        CrashEye.add(delegate: self)
         
         
         return self
@@ -54,6 +70,25 @@ public class CherryAgent{
         self.domain = domain
         UserDefaults.standard.set(domain, forKey: "domain")
         makeHeartbeatApiCall()
+    }
+    
+    public func setIdentity(identity : String){
+        UserDefaults.standard.set(identity, forKey: "cherryIdentity")
+    }
+    
+    public func crashEyeDidCatchCrash(with model: CrashModel) {
+        print("Crashed")
+        let count = UserDefaults.standard.integer(forKey: "crash");
+        UserDefaults.standard.set(count+1, forKey: "crash")
+        var cherryIdentity = UserDefaults.standard.string(forKey: "cherryIdentity")
+        if(cherryIdentity == nil){
+            cherryIdentity = ""
+        }
+        let event = Event(eventName: "EVENT_CRASH").setAttributes(attr: ["identity" : cherryIdentity as Any]).setData(data: [:])
+        CherryAgent.setEvent(event: event, response: {_ in
+            
+        })
+        
     }
     
     
@@ -193,28 +228,6 @@ public class CherryAgent{
         eventData["data"] = event.data
         params["eventData"] = eventData
         params["eventName"] = event.eventName
-        
-        
-//        let links = NSMutableArray()
-//        if let identity = UserDefaults.standard.string(forKey: "identity"){
-//            let link = NSMutableDictionary()
-//            link["linkName"] = "identity"
-//            link["linkType"] = "CUSTOMER"
-//            link["linkValue"] = identity
-//            links.add(link)
-//        }
-        
-//        let clientFP = UIDevice.current.identifierForVendor!.uuidString
-        
-//        let link = NSMutableDictionary()
-//        link["linkName"] = "clientFp"
-//        link["linkType"] = "DEVICE"
-//        link["linkValue"] = clientFP
-//
-//        links.add(link)
-//
-//        params["links"] = links
-        
         
         do{
             let jsonData: Data = try JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions.prettyPrinted)
